@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  nama-service: finalprojectpbkk
-    container_name: finalprojectpbkk
-    image: dptsi/laravel-web-dev
+  nama-service: 
+    container_name: FinalProjectPBKK
+    image: pilih-image
     volumes:
       - ./src:/var/www/html
     env_file: .env

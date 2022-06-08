@@ -46,7 +46,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fa fa-home" aria-hidden="true"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -60,25 +60,25 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="kategori">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-braille" aria-hidden="true"></i>
                     <span>Kategori</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="produk">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-inbox" aria-hidden="true"></i>
                     <span>produk</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="member">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-users" aria-hidden="true"></i>
                     <span>member</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="supplier">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-slideshare" aria-hidden="true"></i>
                     <span>suplier</span>
                 </a>
             </li>
@@ -103,24 +103,24 @@
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="pembelian">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fa fa-download" aria-hidden="true"></i>
                     <span>Pembelian</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="penjualan">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     <span>Penjualan</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="transaksi">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
                     <span>Transaksi Aktif</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="transaksi">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-caret-up" aria-hidden="true"></i>
                     <span>Transaksi Baru</span>
                 </a>
             </li>
@@ -134,7 +134,7 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="laporan">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-line-chart" aria-hidden="true"></i>
                     <span>Rincian Keuangan</span></a>
             </li>
 
@@ -148,13 +148,13 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="user">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-building" aria-hidden="true"></i>
                     <span>Toko</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="setting">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
                     <span>Pengaturan</span></a>
             </li>
 
@@ -224,21 +224,17 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                <a class="dropdown-item" href="setting">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
                                     Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a href="#" class="btn btn-default btn-flat"
                                     onclick="$('#logout-form').submit()">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fa fa-sign-in" aria-hidden="true"></i>
                                     Logout
                                 </a>
                             </div>

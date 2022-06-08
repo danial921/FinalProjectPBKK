@@ -67,7 +67,7 @@
             </li>
             <li>
                 <a href="{{ route('transaksi.baru') }}">
-                    <i class="fa fa-cart-arrow-down"></i> <span>Transaksi Baru</span>
+                    <i class="fa fa-caret-up" aria-hidden="true"></i> <span>Transaksi Baru</span>
                 </a>
             </li>
             <li class="header">REPORT</li>

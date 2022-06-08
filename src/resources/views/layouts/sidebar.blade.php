@@ -62,7 +62,7 @@
             </li>
             <li>
                 <a href="{{ route('transaksi.index') }}">
-                    <i class="fa fa-cart-arrow-down"></i> <span>Transaksi Aktif</span>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i> <span>Transaksi Aktif</span>
                 </a>
             </li>
             <li>

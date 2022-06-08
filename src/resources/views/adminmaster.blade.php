@@ -96,7 +96,7 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="pengeluaran">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa fa-upload" aria-hidden="true"></i>
                     <span>Pengeluaran</span></a>
             </li>
 

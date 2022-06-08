@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('signup')
+@section('login')
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +14,7 @@
     <div class="flex">
         <div class="container">
             <div class="header">
-                <div class="arrow">
+                <div class="arrow sticky">
                     <a href=""><img src="/assets/arrow-left.png" alt="arrow-left"></a>
                 </div>
             </div>
@@ -24,9 +24,18 @@
                 <img src="/assets/logo.png" alt="Logo KULAKU">
             </div>  
             
-            <form action="{{ route('signup') }}" method="post" class="form-login">
+            <form action="{{ route('login') }}" method="post" class="form-login">
                 @csrf
-                <div class="form-group has-feedback @error('email') has-error @enderror">
+                <div class="login form-group has-feedback @error('email') has-error @enderror">
+                    <input type="nama" name="nama" class="username" placeholder="    Enter Full Name" required value="{{ old('name') }}" autofocus>
+                    @error('name')
+                        <span class="help-block">{{ $message }}</span>
+                    @else
+                        <span class="help-block with-errors"></span>
+                    @enderror
+                </div>
+                
+                <div class="login form-group has-feedback @error('email') has-error @enderror">
                     <input type="email" name="email" class="username" placeholder="    Enter Email" required value="{{ old('email') }}" autofocus>
                     @error('email')
                         <span class="help-block">{{ $message }}</span>
@@ -35,7 +44,9 @@
                     @enderror
                 </div>
                     
-                <div class="form-group has-feedback @error('password') has-error @enderror">    
+
+
+                <div class="login form-group has-feedback @error('password') has-error @enderror">    
                     <input type="password" name="password" class="password" placeholder="    Enter Password" required>
                     @error('password')
                         <span class="help-block">{{ $message }}</span>
@@ -44,8 +55,8 @@
                     @enderror
                 </div>
                 <div class="space-1"></div>
-                    <div class="submit" link="">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <div class="login submit" link="">
+                        <button type="submit" class="submit-btn btn btn-primary btn-block btn-flat">Sign In</button>
                         
                         <div class="space-2"></div>
                         <div class="text">

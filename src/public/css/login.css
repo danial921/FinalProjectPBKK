@@ -1,3 +1,5 @@
+
+
 .container{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -8,8 +10,8 @@
 }
 .container{
     width: 360px;
-    height: 737px;
-    top: 0px;
+    height: 720px;
+    top: 10px !important;
     
     background: #DEDEDE;
 }
@@ -17,11 +19,16 @@
 .header{
     width: 46px;
     height: 46px;
-    left: 20px;
-    top: 12px;
+    left: 80px;
+    top: 10x;
 }
+
+.submit-btn{
+    font-size: 20px !important;
+}
+
 .space{
-    height: 137px;
+    height: 110px;
 }
 .login{
     text-align: center;
@@ -37,6 +44,7 @@ input{
     color: rgba(0, 0, 0, 0.19);
     font-size: 15px;
     font-weight: 300;
+    
 }
 .space-1{
     height: 76px;
@@ -56,5 +64,10 @@ button{
     height: 17px;
 }
 .text{
-    font-size: 15px;
+    font-size: 18px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
 }

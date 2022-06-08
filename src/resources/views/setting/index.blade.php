@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
+<div class="d-sm-flex align-items-center justify-content-between mb-2">
     <h4 class="h3 mb-0 text-gray-800">Daftar Toko</h4>
 </div>
 
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
+<div class="d-sm-flex align-items-center justify-content-between mb-1">
     <button onclick="addForm('{{ route('user.store') }}')" class="btn btn-success btn-xs btn-flat"><i class="fa fa-plus" aria-hidden="true"></i> Tambah</button>
 </div>
 `

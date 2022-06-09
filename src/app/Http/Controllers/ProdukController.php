@@ -24,55 +24,6 @@ class ProdukController extends Controller
         return view('produk.index', compact('produk','kategori'));
     }
 
-    public function data()
-    {
-        $idManager = auth()->user()->id;
-        $produk = Produk::leftJoin('kategori', 'kategori.id_kategori', 'produk.id_kategori')
-            ->select('produk.*', 'nama_kategori')->get()->where('idManager',$idManager);
-            // ->orderBy('kode_produk', 'asc')
-            
-
-        return datatables()
-            ->of($produk)
-            ->addIndexColumn()
-            ->addColumn('select_all', function ($produk) {
-                return '
-                    <input type="checkbox" name="id_produk[]" value="'. $produk->id_produk .'">
-                ';
-            })
-            ->addColumn('kode_produk', function ($produk) {
-                return '<span class="label label-success">'. $produk->kode_produk .'</span>';
-            })
-            ->addColumn('kode_produk', function ($produk) {
-                return '<span class="label label-success">'. $produk->kode_produk .'</span>';
-            })
-            
-            ->addColumn('path_img', function ($produk) {
-                return '<img src="/image/'. $produk->path_img .'" width="100px">';
-                 
-            })
-            ->addColumn('harga_beli', function ($produk) {
-                return format_uang($produk->harga_beli);
-            })
-            ->addColumn('harga_jual', function ($produk) {
-                return format_uang($produk->harga_jual);
-            })
-            ->addColumn('stok', function ($produk) {
-                return format_uang($produk->stok);
-            })
-            ->addColumn('aksi', function ($produk) {
-                // <button type="button" onclick="editForm(`'. route('produk.update', $produk->id_produk) .'`)" class="btn btn-xs btn-info btn-flat"><i class="fa fa-pencil"></i></button>
-                return '
-                <div class="btn-group">
-                    
-                    <button type="button" onclick="deleteData(`'. route('produk.destroy', $produk->id_produk) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button>
-                </div>
-                ';
-            })
-            ->rawColumns(['aksi', 'kode_produk', 'select_all','path_img'])
-            ->make(true);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -96,6 +47,7 @@ class ProdukController extends Controller
         $request['kode_produk'] = 'P'. tambah_nol_didepan((int)$produk->id_produk +1, 6);
         $idprofil = auth()->user()->id;
         $input = $request->all();
+        
         if ($image = $request->file('path_img')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();

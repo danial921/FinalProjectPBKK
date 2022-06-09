@@ -57,7 +57,6 @@
 @push('scripts')
 <script>
     let table, table1;
-
     $(function () {
         table = $('.table-penjualan').DataTable({
             responsive: true,
@@ -79,7 +78,6 @@
                 {data: 'aksi', searchable: false, sortable: false},
             ]
         });
-
         table1 = $('.table-detail').DataTable({
             processing: true,
             bSort: false,
@@ -94,12 +92,12 @@
             ]
         })
     });
-
     function showDetail(url) {
         $('#modal-detail').modal('show');
-
         table1.ajax.url(url);
         table1.ajax.reload();
     }
 </script>
+<script src="{{ asset('/ad2/AdminLTE-2/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('/ad2/AdminLTE-2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 @endpush

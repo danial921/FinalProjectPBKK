@@ -19,7 +19,7 @@
                   <img
                     loading="lazy"
                     src="img/logo-white.png"
-                    class="image"
+                    class="imagelogo"
                   />
                 </picture>
                 <div class="builder-image-sizer image-sizer"></div>
@@ -33,7 +33,7 @@
           <picture>
             <img
               loading="lazy"
-              src="img/back.png"
+              src="img/angle-left-solid.svg"
               class="image"
             />
           </picture>
@@ -142,10 +142,20 @@
         object-fit: contain;
         object-position: center;
         position: absolute;
+        /* height: 100%; */
+        width: 15px;
+        top: 0;
+        left: 0;
+      }
+      .imagelogo {
+        object-fit: contain;
+        object-position: center;
+        position: absolute;
         height: 100%;
         width: 100%;
         top: 0;
         left: 0;
+        padding-bottom: 5px;
       }
       .image-sizer {
         width: 100%;

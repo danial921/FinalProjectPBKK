@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Kulakku Kasirmu</title>
     
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="css/font-awesome.min.css">

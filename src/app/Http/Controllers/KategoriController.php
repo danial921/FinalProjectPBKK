@@ -20,27 +20,7 @@ class KategoriController extends Controller
         return view('kategori.index', compact('kategori'));
     }
 
-    public function data()
-    {
-        $idprofil = auth()->user()->id;
-        $kategori = Kategori::orderBy('id_kategori', 'desc')->get()->where('idManager',$idprofil);
-
-        return (datatables()
-            ->of($kategori)
-            ->addIndexColumn()
-            ->addColumn('aksi', function ($kategori) {
-                return '
-                <div class="btn-group">
-                    <button onclick="editForm(`'. route('kategori.update', $kategori->id_kategori) .'`)" class="btn btn-xs btn-info btn-flat"><i class="fa fa-pencil"></i></button>
-                    <button onclick="deleteData(`'. route('kategori.destroy', $kategori->id_kategori) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button>
-                </div>
-                ';
-            })
-            ->rawColumns(['aksi'])
-            ->make(true));
-    }
-
-    /**
+     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -90,7 +70,7 @@ class KategoriController extends Controller
      */
     public function edit(kategori $kategori)
     {
-        return view('kategori.edit',compact('kategori'));
+        //
     }
 
     /**

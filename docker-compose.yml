@@ -2,7 +2,7 @@ version: "3.8"
 services:
   nama-service: 
     container_name: FinalProjectPBKK
-    image: pilih-image
+    image: dptsi/laravel-web-dev
     volumes:
       - ./src:/var/www/html
     env_file: .env
@@ -17,3 +17,31 @@ services:
 networks:
   nginx-proxy-network:
     external: true
+
+db:
+  image: mysql:8.0
+  container_name: db
+  ports:
+    - "3306:3306"
+  command: --default-authentication-plugin=mysql_native_password
+  environment:
+    MYSQL_DATABASE: myDb
+    MYSQL_USER: user
+    MYSQL_PASSWORD: test
+    MYSQL_ROOT_PASSWORD: test
+  volumes:
+    - //docker/dockertest/install/db_dump:/docker-entrypoint-initdb.d
+    - persistent:/var/lib/mysql
+  networks:
+    - default
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db:db
+    ports:
+      - 8000:80
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test

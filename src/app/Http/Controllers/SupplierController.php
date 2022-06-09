@@ -15,25 +15,6 @@ class SupplierController extends Controller
         return view('supplier.index',compact('supplier'));
     }
 
-    public function data()
-    {
-        $idprofil = auth()->user()->id;
-        $supplier = Supplier::orderBy('id_supplier', 'desc')->get()->where('idManager',$idprofil);
-
-        return datatables()
-            ->of($supplier)
-            ->addIndexColumn()
-            ->addColumn('aksi', function ($supplier) {
-                return '
-                <div class="btn-group">
-                    <button type="button" onclick="editForm(`'. route('supplier.update', $supplier->id_supplier) .'`)" class="btn btn-xs btn-info btn-flat"><i class="fa fa-pencil"></i></button>
-                    <button type="button" onclick="deleteData(`'. route('supplier.destroy', $supplier->id_supplier) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button>
-                </div>
-                ';
-            })
-            ->rawColumns(['aksi'])
-            ->make(true);
-    }
 
     /**
      * Show the form for creating a new resource.

@@ -23,34 +23,6 @@ class MemberController extends Controller
         return view('member.index', compact('member'));
     }
 
-    public function data()
-    {
-        $idprofil = auth()->user()->id;
-        $member = Member::orderBy('kode_member')->get()->where('idManager',$idprofil);
-
-        return datatables()
-            ->of($member)
-            ->addIndexColumn()
-            ->addColumn('select_all', function ($produk) {
-                return '
-                    <input type="checkbox" name="id_member[]" value="'. $produk->id_member .'">
-                ';
-            })
-            ->addColumn('kode_member', function ($member) {
-                return '<span class="label label-success">'. $member->kode_member .'<span>';
-            })
-            ->addColumn('aksi', function ($member) {
-                return '
-                <div class="btn-group">
-                    <button type="button" onclick="editForm(`'. route('member.update', $member->id_member) .'`)" class="btn btn-xs btn-info btn-flat"><i class="fa fa-pencil"></i></button>
-                    <button type="button" onclick="deleteData(`'. route('member.destroy', $member->id_member) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button>
-                </div>
-                ';
-            })
-            ->rawColumns(['aksi', 'select_all', 'kode_member'])
-            ->make(true);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -137,20 +109,4 @@ class MemberController extends Controller
                         ->with('success','Product deleted successfully');
     }
 
-    public function cetakMember(Request $request)
-    {
-        $datamember = collect(array());
-        foreach ($request->id_member as $id) {
-            $member = Member::find($id);
-            $datamember[] = $member;
-        }
-
-        $datamember = $datamember->chunk(2);
-        $setting    = Setting::first();
-
-        $no  = 1;
-        $pdf = PDF::loadView('member.cetak', compact('datamember', 'no', 'setting'));
-        $pdf->setPaper(array(0, 0, 566.93, 850.39), 'potrait');
-        return $pdf->stream('member.pdf');
-    }
 }

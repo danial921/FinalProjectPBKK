@@ -107,17 +107,17 @@
                 <tbody>
                     @foreach ($produk as $row)
                         <tr>
+                            <td></td>
                             <td>{{$row->id_produk}}</td>
-                            <td>{{$row->id_kategori}}</td>
-                            <td>{{$row->kode_produk}}</td>
                             <td>{{$row->nama_produk}}</td>
                             <td>
                                 <img src="/image/{{$row->path_img}}" alt="gambar" width="300px">
                             </td>
+                            <td>{{$row->nama_kategori}}</td>
                             <td>{{$row->merk}}</td>
-                            <td>{{$row->diskon}}</td>
                             <td>{{$row->harga_beli}}</td>
                             <td>{{$row->harga_jual}}</td>
+                            <td>{{$row->diskon}}</td>
                             <td>{{$row->stok}}</td>
                             <td>
                                 <form action="{{ route('produk.destroy',$row->id_produk) }}" method="POST">
